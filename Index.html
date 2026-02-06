@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine 💘</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 340px;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ff4d6d;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      font-size: 18px;
+    }
+
+    #noBtn {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- عکس -->
+    <img src="shina.jpg" alt="shina">
+
+    <!-- اسم -->
+    <div class="name">shina 💖</div>
+
+    <h2>Will you be my Valentine?</h2>
+
+    <div>
+      <button id="yesBtn" onclick="yesClick()">Yes 💘</button>
+      <button id="noBtn" onclick="noClick()">No</button>
+    </div>
+  </div>
+
+  <script>
+    let yesSize = 18;
+    const noTexts = [
+      "Are you sure?",
+      "Really?",
+      "Think again 🥺",
+      "Don’t break my heart 💔",
+      "Come on 😭",
+      "Okay now this hurts 😤"
+    ];
+    let noIndex = 0;
+
+    function noClick() {
+      yesSize += 6;
+      document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+      document.getElementById("noBtn").innerText =
+        noTexts[noIndex % noTexts.length];
+      noIndex++;
+    }
+
+    function yesClick() {
+      document.body.innerHTML = `
+        <div style="text-align:center;">
+          <h1>YAAAY 💕</h1>
+          <p>Happy Valentine’s Day shina 🥰</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
